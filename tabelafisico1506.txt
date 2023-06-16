@@ -1,0 +1,83 @@
+CREATE TABLE tb_cidades (
+  codcid INT PRIMARY KEY,
+  nomecid VARCHAR(50) NOT NULL,
+  estadocid VARCHAR(2) 
+  CONSTRAINT CHECK (estadocid IN ('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RR','RO','RJ','RN','RS','SC','SP','SE','TO')));
+
+CREATE TABLE tb_imagens_prod (
+  codimagem INT PRIMARY KEY,
+  produtoimg VARCHAR (255) NOT NULL );
+  
+CREATE TABLE tb_categorias (
+  codcategoria INT PRIMARY KEY,
+  descricaocat VARCHAR (255) NOT NULL );
+
+CREATE TABLE tb_enderecos (
+  codendereco INT PRIMARY KEY,
+  cepend INT NOT NULL,
+  numeroend INT NOT NULL,
+  bairroend VARCHAR (255) NOT NULL,
+  ruaend VARCHAR (255) NOT NULL,
+  complementoend VARCHAR (255),
+  codcid INT,
+  CONSTRAINT fk_codcid 
+  FOREIGN KEY (codcid) 
+  REFERENCES tb_cidades (codcid));
+  
+CREATE TABLE tb_clientes (
+  codcliente INT PRIMARY KEY,
+  nomecli VARCHAR(50) NOT NULL,
+  telefonecli BIGINT (11) NOT NULL,
+  cpfcli BIGINT (12) NOT NULL,
+  senhacli VARCHAR (12) NOT NULL,
+  usuariocli VARCHAR (50) NOT NULL,
+  emailcli VARCHAR (150) NOT NULL,
+  tipocadastro VARCHAR (1) DEFAULT 'C',
+  ativo VARCHAR (1) DEFAULT 'S',
+  codendereco INT,
+  CONSTRAINT fk_codendereco 
+  FOREIGN KEY (codendereco) 
+  REFERENCES tb_enderecos (codendereco));
+  
+CREATE TABLE tb_pedidos (
+  codpedido INT PRIMARY KEY,
+  codtransporte VARCHAR (50),
+  tipoped VARCHAR (1) NOT NULL,
+  pagamento VARCHAR (1) DEFAULT 'P'NOT NULL,
+  valor_entrega FLOAT (5.2) NOT NULL,
+  codcliente INT,
+  CONSTRAINT fk_codcliente 
+  FOREIGN KEY (codcliente)
+  REFERENCES tb_clientes (codclientes));
+  
+CREATE TABLE tb_pedidos_prod (
+  codpedido_prod INT PRIMARY KEY,
+  precoped FLOAT (5.2) NOT NULL,
+  quantidadeped FLOAT (3),
+  codpedido INT,
+  codproduto INT,
+  CONSTRAINT fk_codpedido 
+  FOREIGN KEY (codpedido) 
+  REFERENCES tb_pedidos (codpedido),
+  CONSTRAINT fk_codproduto 
+  FOREIGN KEY (codproduto)
+  REFERENCES tb_produtos (codproduto) );
+  
+CREATE TABLE tb_produtos (
+  codproduto INT PRIMARY KEY,
+  nomeprod VARCHAR (60) NOT NULL,
+  precoprod FLOAT (5.2) NOT NULL,
+  tamanhoprod FLOAT (4.2) NOT NULL,
+  pesoprod BOOLEAN NOT NULL,
+  descricaoprod VARCHAR (255) NOT NULL,
+  ativo VARCHAR (1) DEFAULT 'S',
+  codcategoria INT,
+  codimagem INT,
+  CONSTRAINT fk_codcategoria 
+  FOREIGN KEY (codcategoria) 
+  REFERENCES tb_categorias (codcategoria),
+  CONSTRAINT fk_codimagem 
+  FOREIGN KEY (codimagem) 
+  REFERENCES tb_imagens_prod (codcategoria) );
+
+COMMIT;
