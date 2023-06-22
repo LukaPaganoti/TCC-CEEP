@@ -1,0 +1,90 @@
+-- -----------------------------------------------------
+-- Table `mydb`.`tb_clientes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS tb_clientes (
+  codclientes INT NOT NULL AUTO_INCREMENT,
+  nomecli VARCHAR(50) NOT NULL,
+  telefonecli BIGINT(11) NOT NULL,
+  cpfcli BIGINT(12) NOT NULL,
+  senhacli VARCHAR(12) NOT NULL,
+  usuariocli VARCHAR(50) NOT NULL,
+  emailcli VARCHAR(150) NOT NULL,
+  tipocadastro VARCHAR(1) NOT NULL DEFAULT 'C',
+  ativo VARCHAR(1) NOT NULL DEFAULT 'S',
+  PRIMARY KEY (codclientes));
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tb_cidades`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS tb_cidades (
+  codcidades INT NOT NULL AUTO_INCREMENT,
+  nomecid VARCHAR(50) NOT NULL,
+  estadocid VARCHAR(2) NULL,
+  PRIMARY KEY (codcidades));
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tb_enderecos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS tb_enderecos (
+  codenderecos INT NOT NULL AUTO_INCREMENT,
+  cepend INT NOT NULL,
+  numeroend INT NOT NULL,
+  bairroend VARCHAR(100) NOT NULL,
+  ruaend VARCHAR(100) NOT NULL,
+  complementoend VARCHAR(255) NULL,
+  tb_cidades_codcidades INT NOT NULL,
+  tb_clientes_codcliente INT NOT NULL,
+  PRIMARY KEY (codenderecos));
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tb_pedidos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS tb_pedidos (
+  codpedidos INT NOT NULL AUTO_INCREMENT,
+  codtransporte VARCHAR(50) NULL,
+  tipoped VARCHAR(1) NOT NULL DEFAULT 'E',
+  pagamento VARCHAR(1) NOT NULL DEFAULT 'P',
+  valor_entrega FLOAT(5,2) NOT NULL,
+  tb_clientes_codclientes INT NOT NULL,
+  PRIMARY KEY (codpedidos, tb_clientes_codclientes));
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tb_categorias`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS tb_categorias (
+  codcategorias INT NOT NULL AUTO_INCREMENT,
+  descricaocat VARCHAR(255) NOT NULL,
+  PRIMARY KEY (codcategorias));
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tb_produtos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS tb_produtos (
+  codprodutos INT NOT NULL AUTO_INCREMENT,
+  nomeprod VARCHAR(60) NOT NULL,
+  precoprod FLOAT(5,2) NOT NULL,
+  tamanhoprod FLOAT(4,2) NOT NULL,
+  pesoprod TINYINT NOT NULL,
+  descricaoprod VARCHAR(255) NOT NULL,
+  ativo VARCHAR(1) NULL DEFAULT 'S',
+  tb_categorias_codcategorias INT NOT NULL,
+  PRIMARY KEY (codprodutos, tb_categorias_codcategorias));
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tb_pedidos_produtos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS tb_pedidos_produtos (
+  tb_pedidos_codpedidos INT NOT NULL AUTO_INCREMENT,
+  tb_produtos_codproduto INT NOT NULL,
+  precoped FLOAT(5,2) NOT NULL,
+  quantidadeped FLOAT(3) NULL,
+  PRIMARY KEY (tb_pedidos_codpedidos, tb_produtos_codprodutos));
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tb_imagens_prod`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS tb_imagens_prod (
+  codimagens INT NOT NULL AUTO_INCREMENT,
+  produtoimg VARCHAR(255) NOT NULL,
+  fk_codprodutos INT NOT NULL,
+  PRIMARY KEY (codimagens,fk_codprodutos));
