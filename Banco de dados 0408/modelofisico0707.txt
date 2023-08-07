@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS tb_clientes (
    nomecli VARCHAR(50) NOT NULL,
    telefonecli BIGINT(11) NOT NULL,
    cpfcli BIGINT(12) NOT NULL,
-   senhacli VARCHAR(12) NOT NULL,
+   senhacli VARCHAR(32) NOT NULL,
    usuariocli VARCHAR(50) NOT NULL,
    emailcli VARCHAR(150) NOT NULL,
    tipocadastro VARCHAR(1) NOT NULL DEFAULT 'C',
