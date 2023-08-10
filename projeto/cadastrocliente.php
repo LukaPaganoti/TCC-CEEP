@@ -11,28 +11,33 @@ $pdo = conectar();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de produto</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <form method="post" class="form-group" enctype="multipart/form-data">
-        <p>Nome completo:</p>
-        <input type="nomecli">
-        <p>Telefone:</p>
-        <input type="telefonecli">
-        <p>CPF:</p>
-        <input type="cpfcli">
-        <p>Crie uma senha:</p>
-        <input type="senhacli">
-        <p>Email:</p>
-        <input type="emailcli">
-        <p><input type="submit" value="Salvar"></p>
+        <label>Nome completo:</label>
+        <input type="text" name="nomecli">
+        <br>
+        <label>Telefone:</label>
+        <input type="text" name="telefonecli">
+        <br>
+        <label>CPF:</label>
+        <input type="text" name="cpfcli">
+        <br>     
+        <label>Crie uma senha:</label>
+        <input type="password" name="senhacli">
+        <br>
+        <label>Email:</label>
+        <input type="text" name="emailcli">
+        <br><br>
+        <input type="submit" name="btncadastrar" value="Cadastrar" class="btn btn-dark">
     </form>
 </body>
 </html>
 
 <?php
 //fazer o teste se foi pressionado o botão
-if (isset($_POST['btnSalvar'])) {
+if (isset($_POST['btncadastrar'])) {
 
     // receba os dados do formulário
     // faça 1 para cada input
@@ -48,8 +53,8 @@ if (isset($_POST['btnSalvar'])) {
         exit();
     }   
     if (empty($telefonecli)) {
-            echo "Necessário informar seu telefone";
-            exit();
+        echo "Necessário informar seu telefone";
+        exit();
     }
     if (empty($cpfcli)) {
         echo "Necessário informar seu CPF";
@@ -86,7 +91,7 @@ if (isset($_POST['btnSalvar'])) {
         // envio a execução para outra pagina
         // header("Location: telainicial.php");
     } else {
-        echo "Erro ao cadastrar, confire seus dados novamente";
+        echo "Erro ao cadastrar, confira seus dados novamente!";
     }
 }
 ?>
