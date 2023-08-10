@@ -8,6 +8,8 @@ CREATE TABLE IF NOT EXISTS tb_clientes (
    emailcli VARCHAR(150) NOT NULL,
    tipocadastro VARCHAR(1) NOT NULL DEFAULT 'C',
    ativo VARCHAR(1) NOT NULL DEFAULT 'S',
+   CONSTRAINT tipocadastro CHECK (tipocadastro IN ('A','C')),
+   CONSTRAINT ativo CHECK (ativo IN ('S','N')),
    PRIMARY KEY (codcliente)
 );
 
@@ -49,6 +51,8 @@ CREATE TABLE IF NOT EXISTS tb_pedidos (
    pagamento VARCHAR(1) NOT NULL DEFAULT 'P',
    valor_entrega FLOAT(5,2) NOT NULL,
    fk_codclientes INT NOT NULL,
+   CONSTRAINT tipoped CHECK (tipoped IN ('E','R')),
+   CONSTRAINT pagamento CHECK (pagamento IN ('P','D')),
    PRIMARY KEY (codpedido),
    CONSTRAINT fk_tb_pedidos_tb_clientes1
      FOREIGN KEY (fk_codclientes)
@@ -64,6 +68,7 @@ CREATE TABLE IF NOT EXISTS tb_produtos (
    descricaoprod VARCHAR(255) NOT NULL,
    ativo VARCHAR(1) NULL DEFAULT 'S',
    fk_codcategorias INT NOT NULL,
+   CONSTRAINT ativo CHECK (ativo IN ('S','N')),
    PRIMARY KEY (codproduto),
    CONSTRAINT fk_tb_produtos_tb_categorias1
      FOREIGN KEY (fk_codcategorias)
