@@ -109,8 +109,7 @@ INSERT INTO tb_categorias VALUES (1, 'Quadros coloridos grandes'), (2, 'Quadros 
 (6, 'Quadros preto e branco pequenos'), (7, 'Marca páginas coloridos'), (8, 'Marca páginas preto e branco'),
 (9, 'Chaveiros coloridos'), (10, 'Chaveiros preto e branco');
 
-INSERT INTO tb_clientes VALUES (1, 'Luiza Maria Paganoti Farias', 45998073523, 12759755932,
-'123rft', 'Luiza Maria', 'bendrownedstudios@gmail.com', 'C', 'S');
+INSERT INTO tb_clientes VALUES (1, 'Laisa Assis (teste)', 45998476271, 12345678901, '123teste', 'Laisa Assis', 'laisaassisteste@gmail.com', 'C', 'S'), (2, 'Vitor Hugo (teste)', 45984137132, 12345678901, '1234teste' 'Vitor Hugo', 'vitorhugoteste@gmail.com', 'C', 'S'); (4, 'Sabrina Sandri (teste)', 45999353396, 12345678901, '12345teste', 'Sabrina Sandri', 'sabrinateste@gmail.com', 'C', 'S'); (5, 'Lucas Eduardo (teste)', 45991170168, 12345678901, '123teste', 'Lucas Eduardo', 'lucaseduardo@gmail.com', 'C', 'S'); (6, 'Luka Paganoti Farias', 45998073523, 12759755932, 'CheshaNeko1', 'Luka', 'bendrownedstudios@gmail.com', 'A', 'S');
 
 INSERT INTO tb_enderecos VALUES (1, 85804150, 888, '14 de Novembro', 'Rua Tenente José Firmino',
 'casa da frente, verde', 2853, 1), (2, 85802290, 230, 'Neva', 'Rua Primeiro de Maio',
