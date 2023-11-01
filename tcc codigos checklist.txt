@@ -1,0 +1,42 @@
+Checklist tcc codigo
+
+cadastro cliente OK 
+cadastro endereço OK
+cadastro categoria OK
+cadastro imagem produto OK
+cadastro produto OK
+
+alterar cliente OK
+alterar categoria 
+alterar endereço OK
+alterar imagem 
+alterar pedido 
+alterar cidade OK
+alterar produto pedido
+
+consultar cliente OK
+consultar categoria OK
+consultar enderereços OK
+consultar produto OK
+consultar imagem OK
+consultar pedido OK
+consultar cidade OK
+consultar produto pedido
+
+excluir cliente OK
+excluir categoria OK
+excluir endereço OK
+excluir imagem OK
+excluir produto OK
+excluir cidade OK
+excluir produto pedido
+excluir pedido
+
+login
+barra de pesquisa
+barra de pesquisa puxando do banco OK
+puxar do produtos banco para a tela
+login adm
+drop table
+descrição
+carrinho de compras
