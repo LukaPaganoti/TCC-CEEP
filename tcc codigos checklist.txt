@@ -37,6 +37,6 @@ barra de pesquisa
 barra de pesquisa puxando do banco OK
 puxar do produtos banco para a tela
 login adm
-drop table
-descrição
+drop table OK
+descrição OK
 carrinho de compras
