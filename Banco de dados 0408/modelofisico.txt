@@ -1,3 +1,5 @@
+-- DROP TABLE tb_imagens_prod, tb_pedidos_prod, tb_pedidos, tb_pedidos, tb_enderecos, tb_categorias, tb_cidades, tb_clientes;
+
 CREATE TABLE IF NOT EXISTS tb_clientes (
    codcliente INT NOT NULL AUTO_INCREMENT, -- identificação tabela
    nomecli VARCHAR(50) NOT NULL, -- nome do cliente
