@@ -30,7 +30,7 @@ excluir imagem OK
 excluir produto OK
 excluir cidade OK
 excluir produto pedido
-excluir pedido
+excluir pedido OK (arrumar)
 
 login
 barra de pesquisa
