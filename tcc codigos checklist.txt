@@ -9,7 +9,7 @@ cadastro produto OK
 alterar cliente OK
 alterar categoria 
 alterar endereço OK
-alterar imagem 
+alterar imagem OK
 alterar pedido 
 alterar cidade OK
 alterar produto pedido
@@ -32,12 +32,12 @@ excluir cidade OK
 excluir produto pedido
 excluir pedido OK (arrumar)
 
-login
+login OK
 barra de pesquisa
 barra de pesquisa puxando do banco OK
 puxar do produtos banco para a tela
-login adm
+login adm OK
 drop table OK
 descrição OK
 carrinho de compras
-criptografia
+criptografia OK
