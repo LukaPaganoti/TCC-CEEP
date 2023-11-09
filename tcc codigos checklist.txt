@@ -5,10 +5,12 @@ cadastro endereço OK
 cadastro categoria OK
 cadastro imagem produto OK
 cadastro produto OK
+cadastro cidade
 
 alterar cliente OK
 alterar categoria OK
 alterar endereço OK
+alterar produto
 alterar imagem OK
 alterar pedido 
 alterar cidade OK
@@ -41,3 +43,4 @@ drop table OK
 descrição OK
 carrinho de compras
 criptografia OK
+perfil
