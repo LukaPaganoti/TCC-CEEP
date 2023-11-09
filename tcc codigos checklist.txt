@@ -7,7 +7,7 @@ cadastro imagem produto OK
 cadastro produto OK
 
 alterar cliente OK
-alterar categoria 
+alterar categoria OK
 alterar endereço OK
 alterar imagem OK
 alterar pedido 
