@@ -33,9 +33,9 @@ excluir produto pedido
 excluir pedido OK (arrumar)
 
 login OK
-barra de pesquisa
+barra de pesquisa OK
 barra de pesquisa puxando do banco OK
-puxar do produtos banco para a tela
+puxar do produtos banco para a tela OK
 login adm OK
 drop table OK
 descrição OK
