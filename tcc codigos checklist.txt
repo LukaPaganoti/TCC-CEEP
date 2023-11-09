@@ -5,7 +5,7 @@ cadastro endereço OK
 cadastro categoria OK
 cadastro imagem produto OK
 cadastro produto OK
-cadastro cidade
+cadastro cidade OK
 
 alterar cliente OK
 alterar categoria OK
