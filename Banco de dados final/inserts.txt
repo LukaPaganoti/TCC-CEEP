@@ -1,3 +1,4 @@
+
 INSERT INTO tb_categorias VALUES (1, 'Quadros coloridos grandes'), (2, 'Quadros coloridos médio'),
 (3, 'Quadros coloridos pequenos'), (4, 'Quadros preto e branco grandes'), (5, 'Quadros preto e branco médio'),
 (6, 'Quadros preto e branco pequenos'), (7, 'Marca páginas coloridos'), (8, 'Marca páginas preto e branco'),
@@ -11,6 +12,13 @@ VALUES
 ('Lucas Eduardo (teste)', 45991170168, 12345678901, MD5('123teste'), 'Lucas Eduardo', 'lucaseduardo@gmail.com', 'C', 'S'),
 ('Luka Paganoti Farias', 45998073523, 12759755932, MD5('CheshaNeko1'), 'Luka', 'bendrownedstudios@gmail.com', 'A', 'S'),
 ('Vithor Rafael (teste)', 45999999999, 12345678901, MD5('12345teste'), 'Vithor Rafael', 'vithorrafaelteste@gmail.com', 'C', 'S');
+
+CREATE TABLE IF NOT EXISTS tb_cidades (
+   codcidade INT NOT NULL AUTO_INCREMENT, -- identificação tabela
+   nomecid VARCHAR(50) NOT NULL, -- nome da cidade
+   estadocid VARCHAR(2) NOT NULL, -- estado da cidade
+   PRIMARY KEY (codcidade)
+);
 
 INSERT INTO tb_cidades  VALUES
 (1, 'Afonso Cláudio', 'ES'),
@@ -5605,3 +5613,8 @@ INSERT INTO tb_imagens_prod VALUES (1, 'IMG_20231020_092540.jpg', 4), (2, 'IMG_2
 (4, 'IMG_20231020_092358.jpg', 6), (5, 'IMG_20231020_092328.jpg', 7), (6, 'IMG_20231020_092308.jpg', 1), (7, 'IMG_20231019_102025.jpg', 5),
 (8, 'IMG_20231018_071027.jpg', 3);
 
+ALTER TABLE tb_pedidos
+    ADD COLUMN numero_pix VARCHAR(30) COMMENT numero do pix;
+
+ALTER TABLE tb_clientes
+    ADD COLUMN token VARCHAR(255) COMMENT alterar a senha;
