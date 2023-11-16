@@ -1,11 +1,11 @@
--- DROP TABLE tb_imagens_prod;
--- DROP TABLE tb_pedidos_prod;
--- DROP TABLE tb_produtos; 
--- DROP TABLE tb_pedidos;
--- DROP TABLE tb_enderecos;
--- DROP TABLE tb_categorias;
--- DROP TABLE tb_cidades;
--- DROP TABLE tb_clientes;
+COMMENT DROP TABLE tb_imagens_prod;
+COMMENT DROP TABLE tb_pedidos_prod;
+COMMENT DROP TABLE tb_produtos; 
+COMMENT DROP TABLE tb_pedidos;
+COMMENT DROP TABLE tb_enderecos;
+COMMENT DROP TABLE tb_categorias;
+COMMENT DROP TABLE tb_cidades;
+COMMENT DROP TABLE tb_clientes;
 
 CREATE TABLE IF NOT EXISTS tb_clientes (
    codcliente INT NOT NULL AUTO_INCREMENT COMMENT 'identificação tabela',
@@ -47,9 +47,7 @@ CREATE TABLE IF NOT EXISTS tb_enderecos (
    PRIMARY KEY (codendereco),
    CONSTRAINT fk_tb_enderecos_tb_cidades1
      FOREIGN KEY (fk_codcidade)
-     REFERENCES tb_cidades (codcidade)
-     ON DELETE CASCADE
-     ON UPDATE CASCADE,
+     REFERENCES tb_cidades (codcidade),
    CONSTRAINT fk_tb_enderecos_tb_clientes1
      FOREIGN KEY (fk_codcliente)
      REFERENCES tb_clientes (codcliente)
@@ -106,15 +104,9 @@ CREATE TABLE IF NOT EXISTS tb_imagens_prod (
   produtoimg VARCHAR(255) NOT NULL COMMENT 'imagens produtos',
   fk_codproduto INT NOT NULL COMMENT 'produto escolhido',
   PRIMARY KEY (codimagem),
-  CONSTRAINT fk_tb_imagens_prod_tb_produtos1
+CONSTRAINT fk_tb_imagens_prod_tb_produtos1
     FOREIGN KEY (fk_codproduto)
     REFERENCES tb_produtos (codproduto)
 );
-
-ALTER TABLE tb_pedidos
-    ADD COLUMN numero_pix VARCHAR(30) COMMENT 'numero do pix';
-
-ALTER TABLE tb_clientes
-    ADD COLUMN token VARCHAR(255) COMMENT 'alterar a senha';
 
 COMMIT;
