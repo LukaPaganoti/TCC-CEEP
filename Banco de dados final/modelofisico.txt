@@ -53,8 +53,6 @@ CREATE TABLE IF NOT EXISTS tb_enderecos (
    CONSTRAINT fk_tb_enderecos_tb_clientes1
      FOREIGN KEY (fk_codcliente)
      REFERENCES tb_clientes (codcliente)
-     ON DELETE CASCADE
-     ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tb_pedidos (
@@ -70,8 +68,6 @@ CREATE TABLE IF NOT EXISTS tb_pedidos (
    CONSTRAINT fk_tb_pedidos_tb_clientes1
      FOREIGN KEY (fk_codcliente)
      REFERENCES tb_clientes (codcliente)
-     ON DELETE CASCADE
-     ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tb_produtos (
@@ -88,8 +84,6 @@ CREATE TABLE IF NOT EXISTS tb_produtos (
    CONSTRAINT fk_tb_produtos_tb_categorias1
      FOREIGN KEY (fk_codcategoria)
      REFERENCES tb_categorias (codcategoria)
-     ON DELETE CASCADE
-     ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tb_pedidos_prod (
@@ -101,14 +95,10 @@ CREATE TABLE IF NOT EXISTS tb_pedidos_prod (
    PRIMARY KEY (codpedido_prod),
    CONSTRAINT fk_tb_pedidos_has_tb_produtos_tb_pedidos1
      FOREIGN KEY (fk_codpedido)
-     REFERENCES tb_pedidos (codpedido)
-     ON DELETE CASCADE
-     ON UPDATE CASCADE,
+     REFERENCES tb_pedidos (codpedido),
    CONSTRAINT fk_tb_pedidos_has_tb_produtos_tb_produtos1
      FOREIGN KEY (fk_codproduto)
      REFERENCES tb_produtos (codproduto)
-     ON DELETE CASCADE
-     ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tb_imagens_prod (
@@ -119,8 +109,6 @@ CREATE TABLE IF NOT EXISTS tb_imagens_prod (
   CONSTRAINT fk_tb_imagens_prod_tb_produtos1
     FOREIGN KEY (fk_codproduto)
     REFERENCES tb_produtos (codproduto)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
 );
 
 ALTER TABLE tb_pedidos
