@@ -13,13 +13,6 @@ VALUES
 ('Luka Paganoti Farias', 45998073523, 12759755932, MD5('CheshaNeko1'), 'Luka', 'bendrownedstudios@gmail.com', 'A', 'S'),
 ('Vithor Rafael (teste)', 45999999999, 12345678901, MD5('12345teste'), 'Vithor Rafael', 'vithorrafaelteste@gmail.com', 'C', 'S');
 
-CREATE TABLE IF NOT EXISTS tb_cidades (
-   codcidade INT NOT NULL AUTO_INCREMENT, -- identificação tabela
-   nomecid VARCHAR(50) NOT NULL, -- nome da cidade
-   estadocid VARCHAR(2) NOT NULL, -- estado da cidade
-   PRIMARY KEY (codcidade)
-);
-
 INSERT INTO tb_cidades  VALUES
 (1, 'Afonso Cláudio', 'ES'),
 (2, 'Água Doce do Norte', 'ES'),
