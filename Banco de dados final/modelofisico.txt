@@ -1,12 +1,11 @@
--- DROP TABLE IF NOT EXISTS tb_imagens_prod;
--- DROP TABLE IF NOT EXISTS tb_pedidos_prod;
--- DROP TABLE IF NOT EXISTS tb_produtos; 
--- DROP TABLE IF NOT EXISTS tb_pedidos;
--- DROP TABLE IF NOT EXISTStb_enderecos;
--- DROP TABLE IF NOT EXISTS tb_categorias;
--- DROP TABLE IF NOT EXISTS tb_cidades;
--- DROP TABLE IF NOT EXISTS tb_clientes;
-
+-- DROP TABLE tb_imagens_prod;
+-- DROP TABLE tb_pedidos_prod;
+-- DROP TABLE tb_produtos; 
+-- DROP TABLE tb_pedidos;
+-- DROP TABLE tb_enderecos;
+-- DROP TABLE tb_categorias;
+-- DROP TABLE tb_cidades;
+-- DROP TABLE tb_clientes;
 
 CREATE TABLE IF NOT EXISTS tb_clientes (
    codcliente INT NOT NULL AUTO_INCREMENT COMMENT 'identificação tabela',
@@ -23,7 +22,6 @@ CREATE TABLE IF NOT EXISTS tb_clientes (
    PRIMARY KEY (codcliente)
 );
 
-
 CREATE TABLE IF NOT EXISTS tb_cidades (
    codcidade INT NOT NULL AUTO_INCREMENT COMMENT 'identificação tabela',
    nomecid VARCHAR(50) NOT NULL COMMENT 'nome da cidade',
@@ -31,13 +29,11 @@ CREATE TABLE IF NOT EXISTS tb_cidades (
    PRIMARY KEY (codcidade)
 );
 
-
 CREATE TABLE IF NOT EXISTS tb_categorias (
    codcategoria INT NOT NULL AUTO_INCREMENT COMMENT 'identificação tabela',
    descricaocat VARCHAR(255) NOT NULL COMMENT 'descrição do produto',
    PRIMARY KEY (codcategoria)
 );
-
 
 CREATE TABLE IF NOT EXISTS tb_enderecos (
    codendereco INT NOT NULL AUTO_INCREMENT COMMENT 'identificação tabela',
@@ -61,7 +57,6 @@ CREATE TABLE IF NOT EXISTS tb_enderecos (
      ON UPDATE CASCADE
 );
 
-
 CREATE TABLE IF NOT EXISTS tb_pedidos (
    codpedido INT NOT NULL AUTO_INCREMENT COMMENT 'identificação tabela',
    codtransporte VARCHAR(50) NULL COMMENT 'codigo pedido transportadora',
@@ -78,7 +73,6 @@ CREATE TABLE IF NOT EXISTS tb_pedidos (
      ON DELETE CASCADE
      ON UPDATE CASCADE
 );
-
 
 CREATE TABLE IF NOT EXISTS tb_produtos (
    codproduto INT NOT NULL AUTO_INCREMENT COMMENT 'identificação tabela',
@@ -116,6 +110,7 @@ CREATE TABLE IF NOT EXISTS tb_pedidos_prod (
      ON DELETE CASCADE
      ON UPDATE CASCADE
 );
+
 CREATE TABLE IF NOT EXISTS tb_imagens_prod (
   codimagem INT NOT NULL AUTO_INCREMENT COMMENT 'identificação tabela',
   produtoimg VARCHAR(255) NOT NULL COMMENT 'imagens produtos',
@@ -132,7 +127,6 @@ ALTER TABLE tb_pedidos
     ADD COLUMN numero_pix VARCHAR(30) COMMENT 'numero do pix';
 
 ALTER TABLE tb_clientes
-    ADD COLUMN token VARCHAR(255) COMMENT 'alterar a senha':
+    ADD COLUMN token VARCHAR(255) COMMENT 'alterar a senha';
 
 COMMIT;
-
