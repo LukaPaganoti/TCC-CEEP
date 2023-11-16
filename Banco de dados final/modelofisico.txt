@@ -5725,7 +5725,7 @@ INSERT INTO tb_imagens_prod VALUES (1, 'IMG_20231020_092540.jpg', 4), (2, 'IMG_2
 (8, 'IMG_20231018_071027.jpg', 3);
 
 ALTER TABLE tb_pedidos
-    ADD COLUMN numero_pix VARCHAR(30) -- numero do pix;
+    ADD COLUMN numero_pix VARCHAR(30); -- numero do pix
 
 ALTER TABLE tb_clientes
-    ADD COLUMN token VARCHAR(255) -- alterar a senha;
+    ADD COLUMN token VARCHAR(255); -- alterar a senha
