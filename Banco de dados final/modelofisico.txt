@@ -132,12 +132,12 @@ INSERT INTO tb_categorias VALUES (1, 'Quadros coloridos grandes'), (2, 'Quadros 
 
 INSERT INTO tb_clientes (nomecli, telefonecli, cpfcli, senhacli, usuariocli, emailcli, tipocadastro, ativo) 
 VALUES 
-('Laisa Assis (teste)', 45998476271, 12345678901, '123teste', 'Laisa Assis', 'laisaassisteste@gmail.com', 'C', 'S'),
-('Vitor Hugo (teste)', 45984137132, 12345678901, '1234teste', 'Vitor Hugo', 'vitorhugoteste@gmail.com', 'C', 'S'),
-('Sabrina Sandri (teste)', 45999353396, 12345678901, '12345teste', 'Sabrina Sandri', 'sabrinateste@gmail.com', 'C', 'S'),
-('Lucas Eduardo (teste)', 45991170168, 12345678901, '123teste', 'Lucas Eduardo', 'lucaseduardo@gmail.com', 'C', 'S'),
-('Luka Paganoti Farias', 45998073523, 12759755932, 'CheshaNeko1', 'Luka', 'bendrownedstudios@gmail.com', 'A', 'S'),
-('Vithor Rafael (teste)', 45999999999, 12345678901, '12345teste', 'Vithor Rafael', 'vithorrafaelteste@gmail.com', 'C', 'S');
+('Laisa Assis (teste)', 45998476271, 12345678901, MD5('123teste'), 'Laisa Assis', 'laisaassisteste@gmail.com', 'C', 'S'),
+('Vitor Hugo (teste)', 45984137132, 12345678901, MD5('1234teste'), 'Vitor Hugo', 'vitorhugoteste@gmail.com', 'C', 'S'),
+('Sabrina Sandri (teste)', 45999353396, 12345678901, MD5('12345teste'), 'Sabrina Sandri', 'sabrinateste@gmail.com', 'C', 'S'),
+('Lucas Eduardo (teste)', 45991170168, 12345678901, MD5('123teste'), 'Lucas Eduardo', 'lucaseduardo@gmail.com', 'C', 'S'),
+('Luka Paganoti Farias', 45998073523, 12759755932, MD5('CheshaNeko1'), 'Luka', 'bendrownedstudios@gmail.com', 'A', 'S'),
+('Vithor Rafael (teste)', 45999999999, 12345678901, MD5('12345teste'), 'Vithor Rafael', 'vithorrafaelteste@gmail.com', 'C', 'S');
 
 INSERT INTO tb_cidades VALUES
 (1, 'Afonso Cláudio', 'ES'),
